@@ -11,7 +11,7 @@ async function BuscarBotin(e) {
       const nombre = botines.value.toLowerCase();
 
     try {
-      const respuesta = await fetch("../data/productos.json");
+      const respuesta = await fetch("./data/productos.json");
       if (!respuesta.ok) {
             throw new Error("No se pudieron cargar los productos");
         }
@@ -52,7 +52,7 @@ async function BuscarBotin(e) {
 
 async function cargarProductosDesdeJSON() {
   try {
-    const respuesta = await fetch("../data/productos.json"); 
+    const respuesta = await fetch("./data/productos.json"); 
     
     if (!respuesta.ok) {
       throw new Error(`Error en la carga: ${respuesta.status}`);
@@ -69,7 +69,7 @@ const contenedor = document.getElementById("contenedor-productos");
 
 async function cargarProductosDesdeJSON () {
     try {
-        const respuesta = await fetch("../data/productos.json");
+        const respuesta = await fetch("./data/productos.json");
         const productos = await respuesta.json();
         productos.forEach(producto => {
         contenedor.innerHTML += `
