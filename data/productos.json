@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nike Mercurial Vapor 16",
+    "marca": "Nike",
+    "descripcion": "Botines livianos diseñados para velocidad y agilidad.",
+    "precio": 189999 ,
+     "imagen": "assets/BotinesNikeMercurialennegroyrojo.png"
+  },
+
+  {
+    "id": 2,
+    "nombre": "Nike Phantom GX 2",
+    "marca": "Nike",
+    "descripcion": "Botines con excelente control y precisión para el manejo de la pelota.",
+    "precio": 219999,
+    "imagen": "assets/BotinesNikePhantomX2enestudiooscuro.png"
+
+  },
+
+  {
+    "id": 3,
+    "nombre": "Adidas Predator Elite",
+    "marca": "Adidas",
+    "descripcion": "Botines orientados al control, los pases precisos y los remates.",
+    "precio": 249999,
+    "imagen": "assets/BotinesPredatorAdidasenneónrojo.png"
+
+  },
+
+  {
+    "id": 4,
+    "nombre": "Adidas F50 Elite",
+    "marca": "Adidas",
+    "descripcion": "Botines ligeros para jugadores que buscan velocidad y aceleración.",
+    "precio": 229999,
+    "imagen": "assets/BotinesF50blancoscondetallesdorados.png"
+
+  },
+
+  {
+    "id": 5,
+    "nombre": "Adidas Copa Pure 2",
+    "marca": "Adidas",
+    "descripcion": "Botines enfocados en la comodidad y el toque de pelota.",
+    "precio": 179999,
+    "imagen": "assets/BotinesCopaPureenestudioneón.png"
+  }
+]
