@@ -50,45 +50,46 @@ async function BuscarBotin(e) {
         <article>`;
          } } 
 
-async function cargarProductosDesdeJSON() {
-  try {
-    const respuesta = await fetch("./data/productos.json"); 
-    
-    if (!respuesta.ok) {
-      throw new Error(`Error en la carga: ${respuesta.status}`);
-    }
-    const data = await respuesta.json();
-    return data;
-  } catch (error) {
-    console.error("Hubo un problema al cargar el JSON:", error);
-    return [];
-  }
-}
 
 const contenedor = document.getElementById("contenedor-productos");
 
-async function cargarProductosDesdeJSON () {
+async function cargarProductosDesdeJSON() {
     try {
         const respuesta = await fetch("./data/productos.json");
+
+        if (!respuesta.ok) {
+            throw new Error("No se encontró productos.json: " + respuesta.status);
+        }
+
         const productos = await respuesta.json();
+
+        contenedor.innerHTML = "";
+
         productos.forEach(producto => {
-        contenedor.innerHTML += `
-        <article class="cards">
-        <img src=${producto.imagen}>
-        <h3>${producto.nombre}</h3>
-        <p>Precio: $ ${producto.precio}</p>
-        <button class="btn-carrito" data-id="${producto.id}"
-            data-imagen="${producto.imagen}"
-            data-nombre="${producto.nombre}"
-            data-precio="${producto.precio}">Agregar al Carrito</button>
-        <article>`;
-    })
+            contenedor.innerHTML += `
+                <article class="cards">
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <h3>${producto.nombre}</h3>
+                    <p>Precio: $${producto.precio}</p>
+                    <button
+                        class="btn-carrito"
+                        data-id="${producto.id}"
+                        data-imagen="${producto.imagen}"
+                        data-nombre="${producto.nombre}"
+                        data-precio="${producto.precio}">
+                        Agregar al carrito
+                    </button>
+                </article>
+            `;
+        });
 
     } catch (error) {
         console.error("Error al cargar los productos:", error);
     }
 }
-cargarProductosDesdeJSON()
+
+cargarProductosDesdeJSON();
+
 
 document.addEventListener("click", (e) => {
     const btnCarrito = e.target.closest(".btn-carrito");
